@@ -1,0 +1,40 @@
+{
+  "name": {
+    "message": "YouTube embedded player | PoziTone module"
+  }
+, "shortName": {
+    "message": "YouTube Embed"
+  }
+, "description": {
+    "message": "New features of YouTube embedded player: video info notifications, easy player control, watched video list."
+  }
+
+, "connectWithPozitone": {
+    "message": "Connect with PoziTone"
+  }
+, "openModuleSettings": {
+    "message": "Open module settings"
+  }
+, "limitationsDisclaimer": {
+    "message": "This module is meant for YouTube embedded player only, <strong>it doesn't work on youtube.com itself</strong>."
+  }
+, "readme": {
+    "message": "<a href=\"#\" target=\"_blank\" id=\"readmeCta\" class=\"externalLink\" data-id=\"readme\">Learn more</a>"
+  }
+, "moduleCopyright": {
+    "message": "YouTube is a trademark of Google Inc."
+  }
+, "poziworldCopyright": {
+    "message": "&copy; PoziWorld, <span class=\"copyrightYear\" data-copyright-start-year=\"2016\"></span>"
+  }
+
+, "pozitoneModuleApiConnectUnrecognizedError": {
+    "message": "Unrecognized error"
+  }
+, "pozitoneModuleApiConnectStatusCode400": {
+    "message": "Connection status unknown because of invalid response format. Try again."
+  }
+, "pozitoneModuleApiConnectStatusCode404": {
+    "message": "This extension requires <a href=\"#\" target=\"_blank\" id=\"apiConnectInstallationLink\" class=\"externalLink\" data-id=\"installation\">PoziTone</a> to be installed to work properly. Make sure PoziTone is installed, then try again."
+  }
+}

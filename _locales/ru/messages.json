@@ -1,0 +1,40 @@
+{
+  "name": {
+    "message": "YouTube встроенный плеер | PoziTone-модуль"
+  }
+, "shortName": {
+    "message": "YouTube Embed"
+  }
+, "description": {
+    "message": "Новые возможности встроенного плеера YouTube: оповещения с информацией о видео, лёгкое управление плеером, список просмотренного."
+  }
+
+, "connectWithPozitone": {
+    "message": "Подсоединить к PoziTone"
+  }
+, "openModuleSettings": {
+    "message": "Открыть настройки модуля"
+  }
+, "limitationsDisclaimer": {
+    "message": "Этот модуль предназначен только для встроенного на сторонних сайтах плеера YouTube, <strong>на самом youtube.com он не работает</strong>."
+  }
+, "readme": {
+    "message": "<a href=\"#\" target=\"_blank\" id=\"readmeCta\" class=\"externalLink\" data-id=\"readme\">Узнать больше</a>"
+  }
+, "moduleCopyright": {
+    "message": "YouTube является торговой маркой Google Inc."
+  }
+, "poziworldCopyright": {
+    "message": "&copy; PoziWorld, <span class=\"copyrightYear\" data-copyright-start-year=\"2016\"></span>"
+  }
+
+, "pozitoneModuleApiConnectUnrecognizedError": {
+    "message": "Нераспознанная ошибка. Попробуйте ещё раз."
+  }
+, "pozitoneModuleApiConnectStatusCode400": {
+    "message": "Статус подсоединения неизвестен, т.к. формат ответа нераспознан. Попробуйте ещё раз."
+  }
+, "pozitoneModuleApiConnectStatusCode404": {
+    "message": "Для работы этого расширения необходимо установить <a href=\"#\" target=\"_blank\" id=\"apiConnectInstallationLink\" class=\"externalLink\" data-id=\"installation\">PoziTone</a>. Убедитесь, что PoziTone установлен, затем попробуйте ещё раз."
+  }
+}
