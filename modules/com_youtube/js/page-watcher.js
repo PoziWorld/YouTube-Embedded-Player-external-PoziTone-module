@@ -47,6 +47,7 @@
     this.DisconnectableObserver = null;
     this.widgets = [];
     this.initedWidgets = [];
+    this.$$widgetNodes = [];
 
     this.objSettings = {
         boolIsUserLoggedIn : false
@@ -679,25 +680,35 @@
   };
 
   /**
-   * Init <body /> observer
+   * Keep widget instances.
    *
-   * @type    method
-   * @param   $$youtubeIframes
-   *            YouTube iframe player nodes.
-   * @param   arrayWidgets
-   *            Array to push initialized widget into.
-   * @return  array
+   * @param {HTMLElement} $$youtubeIframes - YouTube iframe player nodes.
+   * @param {YT.Player[]} arrayWidgets - Array to push initialized widget into.
+   * @return {YT.Player[]}
    **/
 
   PageWatcher.prototype.createWidgetsArray = function( $$youtubeIframes, arrayWidgets ) {
-    var _this = this;
+    const _this = this;
+    const $$existingWidgetNodes = _this.$$widgetNodes;
 
     if ( ! arrayWidgets ) {
       arrayWidgets = [];
     }
 
-    for ( let i = 0, intWidgetsCount = $$youtubeIframes.length; i < intWidgetsCount; i++ ) {
-      var $$youtubeIframe = $$youtubeIframes[ i ];
+    const $$newYoutubeIframes = Array.from( $$youtubeIframes ).filter( function( $$youtubeIframe ) {
+      const $$existingWidgetNodesContainingThisOne = $$existingWidgetNodes.filter( function( $$widgetNode ) {
+        return document.contains( $$widgetNode ) && $$widgetNode.isEqualNode( $$youtubeIframe );
+      } );
+
+      if ( ! $$existingWidgetNodesContainingThisOne.length ) {
+        $$existingWidgetNodes.push( $$youtubeIframe );
+
+        return true;
+      }
+    } );
+
+    for ( let i = 0, intWidgetsCount = $$newYoutubeIframes.length; i < intWidgetsCount; i++ ) {
+      var $$youtubeIframe = $$newYoutubeIframes[ i ];
       var strSrc = $$youtubeIframe.src;
 
       // http://stackoverflow.com/a/8498668/561712
