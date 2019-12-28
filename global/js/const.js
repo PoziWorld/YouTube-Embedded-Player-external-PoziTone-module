@@ -38,12 +38,41 @@ const
       , strModuleId : 'com_youtube'
       , strModuleReadmeUrl : 'https://github.com/PoziWorld/YouTube-Embedded-Player-external-PoziTone-module/blob/master/README.md'
       , strHostApiVersionVar : 'strHostApiVersion'
-      , strPozitoneInstallationUrl : ( ! boolConstIsOperaAddon
-          ? 'https://chrome.google.com/webstore/detail/pozitone/bdglbogiolkffcmojmmkipgnpkfipijm'
-          : 'https://addons.opera.com/extensions/details/pozitone/'
-        )
+      , strPozitoneInstallationUrl : ''
     }
   ;
+
+( function () {
+  init();
+
+  /**
+   * Initialize the module.
+   */
+
+  function init() {
+    setPozitoneInstallationUrl();
+  }
+
+  /**
+   * Figure out which store is the best for this browser.
+   */
+
+  function setPozitoneInstallationUrl() {
+    let pozitoneInstallationUrl;
+
+    if ( boolConstIsOperaAddon ) {
+      pozitoneInstallationUrl = 'https://addons.opera.com/extensions/details/pozitone/';
+    }
+    else if ( bowser.name === 'Edge (Chromium)' ) {
+      pozitoneInstallationUrl = 'https://microsoftedge.microsoft.com/addons/detail/mnfohmojhhcbbnafeehfhghjaeaokjbl';
+    }
+    else {
+      pozitoneInstallationUrl = 'https://chrome.google.com/webstore/detail/pozitone/bdglbogiolkffcmojmmkipgnpkfipijm';
+    }
+
+    objConst.strPozitoneInstallationUrl = pozitoneInstallationUrl;
+  }
+} )();
 
 /* =============================================================================
 
