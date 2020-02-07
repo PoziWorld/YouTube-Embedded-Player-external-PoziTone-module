@@ -32,7 +32,7 @@
               , "global/js/bowser.js"
               , "global/js/const.js"
               , "global/js/utils.js"
-              , "global/js/pozitone-module-api.js"
+              , "global/js/pozitone-module-sdk.js"
               , "modules/com_youtube/js/page-watcher.js"
               , "modules/com_youtube/js/iframe_api.js"
               , "modules/com_youtube/js/www-widgetapi.js"
@@ -47,7 +47,7 @@
           , "global/js/const.js"
           , "global/js/utils.js"
           , "global/js/background.js"
-          , "global/js/pozitone-module-api.js"
+          , "global/js/pozitone-module-sdk.js"
         ]
     }
   , "options_ui" : {

@@ -121,7 +121,7 @@
     // This is to run only once
     if ( ! initedWidgets.length ) {
       _this.addRuntimeOnMessageListener();
-      pozitoneModule.api.init( objConst.strPozitoneEdition, _this, boolConstIsOperaAddon );
+      pozitoneModule.sdk.init( objConst.strPozitoneEdition, _this, boolConstIsOperaAddon );
     }
 
     for ( let i = 0, intWidgetsCount = widgets.length; i < intWidgetsCount; i++ ) {
@@ -130,7 +130,7 @@
       // TODO: Fix cause, not effect
       let initedWidget = this.getInitedWidget( widget );
 
-      if ( pozitoneModule.api.isEmpty( initedWidget ) ) {
+      if ( pozitoneModule.sdk.isEmpty( initedWidget ) ) {
         initedWidgets.push( widget );
 
         let initedWidgetElementNumber = initedWidgets.length - 1;
@@ -176,7 +176,7 @@
 
     chrome.runtime.onMessage.addListener(
       function( objMessage, objSender, funcSendResponse ) {
-        pozitoneModule.api.processRequest(
+        pozitoneModule.sdk.processRequest(
             objMessage
           , objSender
           , funcSendResponse
@@ -274,7 +274,7 @@
   PageWatcher.prototype.convertNotificationLogoUrl = function ( funcResolve, funcReject ) {
     var _this = this;
 
-    pozitoneModule.api.convertImageSrcToDataUrl(
+    pozitoneModule.sdk.convertImageSrcToDataUrl(
         chrome.runtime.getURL( _this.objStationInfo.strLogoDataUri )
       , function ( strDataUri ) {
           _this.objStationInfo.strLogoDataUri = strDataUri;
@@ -364,7 +364,7 @@
     widget.objPlayerInfo.boolIsPlaying = true;
     widget.objPlayerInfo.boolIsMuted = widget.isMuted();
     widget.objPlayerInfo.intVolume = widget.getVolume();
-    widget.objStationInfo.strTrackInfo = pozitoneModule.api.setMediaInfo( objVideoData.author, objVideoData.title );
+    widget.objStationInfo.strTrackInfo = pozitoneModule.sdk.setMediaInfo( objVideoData.author, objVideoData.title );
 
     if ( ! widget.objSettings.boolHadPlayedBefore ) {
       this.sendMediaEvent( 'onFirstPlay', widget );
@@ -424,7 +424,7 @@
       , strCommand : ''
     };
 
-    pozitoneModule.api.sendMediaEvent( objData );
+    pozitoneModule.sdk.sendMediaEvent( objData );
   };
 
   /**
@@ -572,7 +572,7 @@
 
     this.getPlayerVolume( widget );
 
-    pozitoneModule.api.changeVolume(
+    pozitoneModule.sdk.changeVolume(
         strDirection
       , widget.objPlayerInfo.intVolume
       , function ( intVolume ) {

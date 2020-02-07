@@ -58,7 +58,7 @@
 
   chrome.runtime.onMessageExternal.addListener(
     function( objMessage, objSender, funcSendResponse ) {
-      pozitoneModule.api.processRequest(
+      pozitoneModule.sdk.processRequest(
           objMessage
         , objSender
         , funcSendResponse
